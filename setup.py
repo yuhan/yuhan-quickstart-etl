@@ -10,6 +10,7 @@ setup(
         "textblob",
         "tweepy",
         "dagster-cloud",
+        "boto3",
         "wordcloud",
     ],
     extras_require={"dev": ["dagit", "pytest"]},
