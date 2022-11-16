@@ -33,14 +33,14 @@ This starter includes:
 In this project, we're building an analytical pipeline that explores popular topics on HackerNews.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/homepage.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/homepage.png?raw=true" />
 </p>
 
 This project:
 
-- Fetches data from [HackerNews](https://github.com/HackerNews/API) APIs.
+- Fetches data from [HackerNews](https://raw.githubusercontent.com/HackerNews/API) APIs.
 - Transforms the collected data using [Pandas](http://pandas.pydata.org/pandas-docs/stable/).
-- Creates a [word cloud](https://github.com/amueller/word_cloud) based on trending HackerNews stories to visualize popular topics on HackerNews.
+- Creates a [word cloud](https://raw.githubusercontent.com/amueller/word_cloud) based on trending HackerNews stories to visualize popular topics on HackerNews.
 
 ## Getting started
 
@@ -77,7 +77,7 @@ Open http://localhost:3000 with your browser to see the project.
 With the starter project loaded in your browser, you'll see both jobs and assets listed in the left nav.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-1-1-left-nav.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-1-1-left-nav.png?raw=true" />
 </p>
 
 Click on the `hackernews` asset group to view the HackerNews assets and their relationship.
@@ -99,19 +99,19 @@ An asset is a software object that models a data asset, which can be a file in y
 Now we've got a basic understanding of Dagster assets. Let's materialize the assets.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-1-2-materialize-all.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-1-2-materialize-all.png?raw=true" />
 </p>
 
 Click `Materialize all` to kick off a Dagster run which will pull info from the external APIs and move the data through assets -- As you iterate, some assets may get out of date. To refresh them, you can select a subset of assets to run, instead of rerunning the entire pipeline, which allows us to avoid unnecessary reruns of the expensive computations and re-materialize just the assets that need to be updated. This capability would be very helpful when certain assets take a long time to run or interact will APIs that have restrict rate limits.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-1-3-view-run.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-1-3-view-run.png" />
 </p>
 
 You'll see an indicator pops up with the launched run ID. You can click "View" to monitor the run in real-time. This will open a new tab in your browser:
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-1-4-compute-logs.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-1-4-compute-logs.png?raw=true" />
 </p>
 
 The process will run for a bit. While it's running, you should see the real-time compute logs printed in the UI. *(It may take 1-2 minutes to fetch all top 500 stories from HackerNews in the `hackernews_topstories` step).*
@@ -121,31 +121,31 @@ The process will run for a bit. While it's running, you should see the real-time
 When the run completes, you'll see a metadata called `plot` that's attached to an "ASSET_MATERIALIZATION" event and it should be in the Markdown format.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-2-5-asset-in-logs.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-2-5-asset-in-logs.png?raw=true" />
 </p>
 
 Click "Show Markdown". You will see a word cloud of the top 500 HackerNews story titles that was generated in the `hackernews_topstories_word_cloud` asset.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-2-6-hackernews_word_cloud.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-2-6-hackernews_word_cloud.png?raw=true" />
 </p>
 
 The Markdown content is recorded in the `hackernews_topstories_word_cloud` asset [in `quickstart_etl/assets/hackernews.py`](./quickstart_etl/assets/hackernews.py). Dagster supports attaching arbitrary [metadata](https://docs.dagster.io/_apidocs/ops#dagster.MetadataValue) to asset materializations. In this example, we saved the image to a buffer and embeded the image into Markdown logged as asset metadata for quick view. This metadata will also be displayed on the "Activity" tab of the "Asset Details" page in the UI. From the compute logs of a run, You can click the "View Asset" to go to the "Asset Details" page.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-2-7-view-assets.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-2-7-view-assets.png?raw=true" />
 </p>
 
 This metadata would be useful for monitoring and maintaining the asset as you iterate. Similarly, we've also recorded some metadata in the `hackernews_topstories` asset. You can filter the compute logs by typing the asset name (e.g. `hackernews_topstories`) or the event type (e.g. `type:ASSET_MATERIALIZATION`) in the "Log Filter" input box:
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-2-8-filter.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-2-8-filter.png?raw=true" />
 </p>
 
 Then, you can find the `hackernews_topstories` asset has two metadata entries: `num_records` and `preview`. Both are defined [in `quickstart_etl/assets/hackernews.py`](./quickstart_etl/assets/hackernews.py), in which we record the first five rows of the output Pandas DataFrame in the `preview` metadata entry as Markdown type -- This could help debug and keep your assets easily monitored. Click "Show Markdown", and you will see the preview of the output data frame:
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-2-9-preview.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-2-9-preview.png?raw=true" />
 </p>
 
 Note: You'll find a `path` metadata attached to every asset. This is because by default assets are materialized to pickle files on your local filesystem. In most projects, your assets will be materialized to a production system, and you can fully customize the I/O using [I/O managers](https://docs.dagster.io/concepts/io-management/io-managers).
@@ -161,13 +161,13 @@ Now, let's set up the daily job with Dagster.
 In the UI, clicking "all_assets_job" in the left nav will bring you to the job definition page. In the left nav, it indicates the `all_assets_job` has a schedule associated with it; on the job page, you will find more info about the schedule.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-3-1-schedule-off.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-3-1-schedule-off.png?raw=true" />
 </p>
 
  You can simply turn on the schedule switch to set up the daily job we defined in [quickstart_etl/repository.py](./quickstart_etl/repository.py).
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-3-2-schedule-on.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-3-2-schedule-on.png?raw=true" />
 </p>
 
 ### (Optional) Running daemon locally
@@ -175,7 +175,7 @@ In the UI, clicking "all_assets_job" in the left nav will bring you to the job d
 If you're running Dagster locally, you will see a warning that your daemon isn’t running.
 
 <p align="center">
-    <img height="300" src="../../docs/next/public/images/quickstarts/basic/step-3-3-daemon-warning.png" />
+    <img height="300" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-3-3-daemon-warning.png?raw=true" />
 </p>
 
 <details><summary>👈 Expand to learn how to set up a local daemon</summary>
@@ -192,7 +192,7 @@ dagster-daemon run
 Once your Dagster Daemon is running, the schedules that are turned on will start running.
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/step-3-4-daemon-on.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-3-4-daemon-on.png?raw=true" />
 </p>
 
 </details>
@@ -213,7 +213,7 @@ You can reload the code in the "Deployment" page.
 <details><summary>👈 Expand to view the screenshot</summary>
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/more-reload-code.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/more-reload-code.png?raw=true" />
 </p>
 
 </details>
@@ -222,7 +222,7 @@ Or, from the left nav or on each job page.
 <details><summary>👈 Expand to view the screenshot</summary>
 
 <p align="center">
-    <img height="500" src="../../docs/next/public/images/quickstarts/basic/more-reload-left-nav.png" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/more-reload-left-nav.png?raw=true" />
 </p>
 
 </details>
